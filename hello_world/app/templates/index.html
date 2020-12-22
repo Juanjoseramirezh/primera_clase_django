@@ -1,0 +1,14 @@
+{% extends "base.html"%}
+
+{% block content %}
+    <p>el perrito</p>
+    {%load static%}
+    <img src="{% static 'img/perro.jpg' %}" alt="aca esta la imagen del perrito">
+
+
+<form action="/dogs" method="POST">
+    {% csrf_token %}
+    <input type="text" name="dog" />
+    <input type="submit" value="Create Dog" />
+</form>
+{% endblock content %}
